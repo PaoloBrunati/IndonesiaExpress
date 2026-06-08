@@ -7,8 +7,7 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:#111;color:#eee;font-family:'Segoe UI',Tahoma,sans-serif;padding-bottom:75px;min-height:100vh}
-.section{display:none}
-.section.active{display:block}
+.section{display:none}.section.active{display:block}
 .hero{background:linear-gradient(135deg,#1a472a 0%,#2d6a4f 40%,#1b4332 70%,#081c15 100%);min-height:60vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 20px}
 .hero-emojis{font-size:2.2rem;margin-bottom:18px;letter-spacing:8px}
 .hero h1{font-size:2.8rem;font-weight:900;text-transform:uppercase;letter-spacing:3px;color:#fff;line-height:1.2}
@@ -19,8 +18,7 @@ body{background:#111;color:#eee;font-family:'Segoe UI',Tahoma,sans-serif;padding
 .tappe-grid{display:grid;grid-template-columns:1fr;gap:12px;padding:4px 16px 20px}
 .tappa-card{background:#1e1e1e;border-radius:14px;padding:16px;display:flex;align-items:center;gap:14px;border-left:4px solid #2d6a4f;cursor:pointer;transition:background .2s}
 .tappa-card:hover{background:#282828}
-.tc-emoji{font-size:2rem}
-.tc-info{flex:1}
+.tc-emoji{font-size:2rem}.tc-info{flex:1}
 .tc-info h3{font-size:1rem;font-weight:700;color:#fff}
 .tc-info .sub{font-size:.82rem;color:#888;margin-top:2px}
 .tc-badge{background:#111;border:1px solid #333;border-radius:20px;padding:4px 10px;font-size:.75rem;color:#95d5b2;white-space:nowrap}
@@ -36,6 +34,19 @@ body{background:#111;color:#eee;font-family:'Segoe UI',Tahoma,sans-serif;padding
 .si-info h3{font-size:1rem;font-weight:700;color:#fff}
 .si-info p{font-size:.85rem;color:#888;margin-top:3px;line-height:1.4}
 .si-info .hbadge{display:inline-block;margin-top:6px;background:#1e3a2f;color:#95d5b2;border-radius:20px;padding:3px 10px;font-size:.78rem;border:1px solid #2d6a4f}
+.giorni-title{margin:16px 16px 8px;font-size:.78rem;color:#95d5b2;text-transform:uppercase;letter-spacing:1px;font-weight:700;display:flex;align-items:center;gap:6px}
+.giorno-block{margin:0 16px 12px;background:#1a1a1a;border-radius:12px;overflow:hidden;border:1px solid #2a2a2a}
+.giorno-header{background:#1e3a2f;padding:10px 14px;display:flex;align-items:center;gap:10px}
+.giorno-header .day-num{background:#2d6a4f;color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:800;flex-shrink:0}
+.giorno-header .day-date{font-size:.85rem;font-weight:700;color:#95d5b2}
+.giorno-header .day-city{font-size:.75rem;color:#52b788;margin-left:auto}
+.luoghi-list{padding:8px 0}
+.luogo-item{padding:7px 14px;display:flex;align-items:center;gap:10px;border-bottom:1px solid #222}
+.luogo-item:last-child{border-bottom:none}
+.luogo-emoji{font-size:1.1rem;flex-shrink:0}
+.luogo-info{flex:1}
+.luogo-info strong{font-size:.88rem;color:#eee;display:block}
+.luogo-info span{font-size:.75rem;color:#777;line-height:1.3}
 .map-wrap{margin:16px;border-radius:14px;overflow:hidden;border:1px solid #2d6a4f;height:230px}
 .map-wrap iframe{width:100%;height:100%;border:none;display:block}
 .map-label{margin:16px 16px 6px;font-size:.78rem;color:#2d6a4f;text-transform:uppercase;letter-spacing:1px;font-weight:700}
@@ -50,8 +61,7 @@ body{background:#111;color:#eee;font-family:'Segoe UI',Tahoma,sans-serif;padding
 .faq-item.open .faq-a{display:block}
 .bottom-nav{position:fixed;bottom:0;left:0;right:0;background:#1a1a1a;border-top:1px solid #333;display:flex;justify-content:space-around;align-items:stretch;height:66px;z-index:999}
 .nav-item{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;padding:6px 2px;border:none;background:transparent;color:#666;font-size:.6rem;font-weight:600;text-transform:uppercase;letter-spacing:.5px;gap:2px;transition:background .2s}
-.nav-item:hover{background:#222}
-.nav-item.active{color:#95d5b2}
+.nav-item:hover{background:#222}.nav-item.active{color:#95d5b2}
 .nav-emoji{font-size:1.35rem}
 @media(min-width:600px){.hero h1{font-size:3.5rem}.tappe-grid{grid-template-columns:1fr 1fr}}
 </style>
@@ -67,129 +77,199 @@ body{background:#111;color:#eee;font-family:'Segoe UI',Tahoma,sans-serif;padding
 <p class="home-intro">Tra vulcani e risaie, templi e reef di corallo.<br>19 giorni che non dimenticheremo mai.</p>
 <div class="pill">🗺️ Le Tappe</div>
 <div class="tappe-grid">
-<div class="tappa-card" onclick="goTo('sec-java',1)">
-<span class="tc-emoji">🏛️</span>
-<div class="tc-info"><h3>Java</h3><div class="sub">Yogyakarta · Bromo · Banyuwangi</div></div>
-<span class="tc-badge">1–7 ago</span>
-</div>
-<div class="tappa-card" onclick="goTo('sec-bali',2)">
-<span class="tc-emoji">🌺</span>
-<div class="tc-info"><h3>Bali — Ubud</h3><div class="sub">Ubad Retreat</div></div>
-<span class="tc-badge">7–11 ago</span>
-</div>
-<div class="tappa-card" onclick="goTo('sec-gili',3)">
-<span class="tc-emoji">🏝️</span>
-<div class="tc-info"><h3>Gili Meno</h3><div class="sub">Fantastic Cottages</div></div>
-<span class="tc-badge">11–15 ago</span>
-</div>
-<div class="tappa-card" onclick="goTo('sec-komodo',4)">
-<span class="tc-emoji">🦎</span>
-<div class="tc-info"><h3>Komodo</h3><div class="sub">Labuan Bajo · Arcipelago</div></div>
-<span class="tc-badge">15–19 ago</span>
-</div>
+<div class="tappa-card" onclick="goTo('sec-java',1)"><span class="tc-emoji">🏛️</span><div class="tc-info"><h3>Java</h3><div class="sub">Yogyakarta · Bromo · Banyuwangi</div></div><span class="tc-badge">1–7 ago</span></div>
+<div class="tappa-card" onclick="goTo('sec-bali',2)"><span class="tc-emoji">🌺</span><div class="tc-info"><h3>Bali — Ubud</h3><div class="sub">Ubad Retreat</div></div><span class="tc-badge">7–11 ago</span></div>
+<div class="tappa-card" onclick="goTo('sec-gili',3)"><span class="tc-emoji">🏝️</span><div class="tc-info"><h3>Gili Meno</h3><div class="sub">Fantastic Cottages</div></div><span class="tc-badge">11–15 ago</span></div>
+<div class="tappa-card" onclick="goTo('sec-komodo',4)"><span class="tc-emoji">🦎</span><div class="tc-info"><h3>Komodo</h3><div class="sub">Labuan Bajo · Arcipelago</div></div><span class="tc-badge">15–19 ago</span></div>
 </div>
 <div class="map-label">🗺️ Dove siamo nel mondo</div>
 <div class="map-wrap"><iframe src="https://maps.google.com/maps?q=Indonesia&t=&z=5&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe></div>
 </div>
 <div id="sec-java" class="section">
-<div class="sec-header">
-<div class="se">🏛️</div>
-<h2>Java</h2>
-<p class="sub">Templi, vulcani e foreste — il cuore pulsante dell'Indonesia</p>
-</div>
+<div class="sec-header"><div class="se">🏛️</div><h2>Java</h2><p class="sub">Templi, vulcani e foreste — il cuore pulsante dell'Indonesia</p></div>
 <div class="date-range">📅 1 Agosto → 7 Agosto 2026</div>
 <div class="stop-list">
-<div class="stop-item">
-<span class="si-emoji">🕌</span>
-<div class="si-info">
-<h3>Yogyakarta</h3>
-<p>La capitale culturale di Java. Borobudur, Prambanan, Keraton — la città che non finisce mai di stupire.</p>
-<span class="hbadge">🏨 Jambuluwuk Malioboro · 1–5 ago</span>
+<div class="stop-item"><span class="si-emoji">🕌</span><div class="si-info"><h3>Yogyakarta</h3><p>La capitale culturale di Java. Borobudur, Prambanan, Keraton — la città che non finisce mai di stupire.</p><span class="hbadge">🏨 Jambuluwuk Malioboro · 1–5 ago</span></div></div>
+<div class="stop-item"><span class="si-emoji">🌋</span><div class="si-info"><h3>Bromo</h3><p>L'alba sul vulcano più spettacolare d'Indonesia. Mare di sabbia, fumo e silenzio assoluto.</p><span class="hbadge">🏨 Gubuk Ndeso Bromo · 5–6 ago</span></div></div>
+<div class="stop-item"><span class="si-emoji">🚢</span><div class="si-info"><h3>Banyuwangi</h3><p>Porta d'ingresso a Bali. Ijen con il fuoco blu, e il traghetto verso la prossima avventura.</p><span class="hbadge">🏨 Ketapang Indah Hotel · 6–7 ago</span></div></div>
+</div>
+<div class="giorni-title">📅 Cosa fare giorno per giorno</div>
+<div class="giorno-block">
+<div class="giorno-header"><div class="day-num">1</div><div class="day-date">Venerdì 1 Agosto</div><div class="day-city">Yogyakarta</div></div>
+<div class="luoghi-list">
+<div class="luogo-item"><span class="luogo-emoji">✈️</span><div class="luogo-info"><strong>Arrivo a Yogyakarta</strong><span>Sistemazione all'hotel, riposo e primo giro di ambientamento</span></div></div>
+<div class="luogo-item"><span class="luogo-emoji">🛍️</span><div class="luogo-info"><strong>Jalan Malioboro</strong><span>Il viale principale di Yogya, pieno di mercati, batik e street food</span></div></div>
+<div class="luogo-item"><span class="luogo-emoji">🌙</span><div class="luogo-info"><strong>Alun-Alun Kidul</strong><span>La piazza sud del Sultanato, magica di notte con le luci colorate</span></div></div>
 </div>
 </div>
-<div class="stop-item">
-<span class="si-emoji">🌋</span>
-<div class="si-info">
-<h3>Bromo</h3>
-<p>L'alba sul vulcano più spettacolare d'Indonesia. Mare di sabbia, fumo e silenzio assoluto.</p>
-<span class="hbadge">🏨 Gubuk Ndeso Bromo · 5–6 ago</span>
+<div class="giorno-block">
+<div class="giorno-header"><div class="day-num">2</div><div class="day-date">Sabato 2 Agosto</div><div class="day-city">Yogyakarta</div></div>
+<div class="luoghi-list">
+<div class="luogo-item"><span class="luogo-emoji">🌅</span><div class="luogo-info"><strong>Borobudur all'alba</strong><span>Il più grande tempio buddista del mondo — arrivare prima del sunrise</span></div></div>
+<div class="luogo-item"><span class="luogo-emoji">⛩️</span><div class="luogo-info"><strong>Candi Mendut</strong><span>Tempio buddhista vicino a Borobudur con statue colossali</span></div></div>
+<div class="luogo-item"><span class="luogo-emoji">🎨</span><div class="luogo-info"><strong>Laboratori di Batik</strong><span>Visita a un laboratorio artigianale per vedere il processo del batik</span></div></div>
 </div>
 </div>
-<div class="stop-item">
-<span class="si-emoji">🚢</span>
-<div class="si-info">
-<h3>Banyuwangi</h3>
-<p>Porta d'ingresso a Bali. Ijen con il fuoco blu, e il traghetto verso la prossima avventura.</p>
-<span class="hbadge">🏨 Ketapang Indah Hotel · 6–7 ago</span>
+<div class="giorno-block">
+<div class="giorno-header"><div class="day-num">3</div><div class="day-date">Domenica 3 Agosto</div><div class="day-city">Yogyakarta</div></div>
+<div class="luoghi-list">
+<div class="luogo-item"><span class="luogo-emoji">🏛️</span><div class="luogo-info"><strong>Prambanan</strong><span>Complesso di templi induisti del IX secolo, Patrimonio UNESCO</span></div></div>
+<div class="luogo-item"><span class="luogo-emoji">🗿</span><div class="luogo-info"><strong>Candi Sewu e Plaosan</strong><span>Templi buddisti vicini a Prambanan, meno affollati e molto suggestivi</span></div></div>
+<div class="luogo-item"><span class="luogo-emoji">🌋</span><div class="luogo-info"><strong>Vista sul Monte Merapi</strong><span>Il vulcano attivo più pericoloso dell'Indonesia, visibile da Prambanan</span></div></div>
 </div>
+</div>
+<div class="giorno-block">
+<div class="giorno-header"><div class="day-num">4</div><div class="day-date">Lunedì 4 Agosto</div><div class="day-city">Yogyakarta</div></div>
+<div class="luoghi-list">
+<div class="luogo-item"><span class="luogo-emoji">💦</span><div class="luogo-info"><strong>Taman Sari (Water Castle)</strong><span>Antico palazzo reale con piscine e tunnel segretti del Sultano</span></div></div>
+<div class="luogo-item"><span class="luogo-emoji">👑</span><div class="luogo-info"><strong>Keraton (Palazzo del Sultano)</strong><span>Il palazzo reale ancora abitato, con museo e danze tradizionali</span></div></div>
+<div class="luogo-item"><span class="luogo-emoji">🛒</span><div class="luogo-info"><strong>Mercato Beringharjo</strong><span>Il mercato tradizionale più grande di Yogya: spezie, tessuti, street food</span></div></div>
+</div>
+</div>
+<div class="giorno-block">
+<div class="giorno-header"><div class="day-num">5</div><div class="day-date">Martedì 5 Agosto</div><div class="day-city">Bromo</div></div>
+<div class="luoghi-list">
+<div class="luogo-item"><span class="luogo-emoji">🌄</span><div class="luogo-info"><strong>Penanjakan Sunrise Point</strong><span>Il punto panoramico più famoso: alba sul Bromo con vista su 4 vulcani</span></div></div>
+<div class="luogo-item"><span class="luogo-emoji">🌋</span><div class="luogo-info"><strong>Cratere del Monte Bromo</strong><span>Trekking fino all'orlo del cratere fumante — esperienza indimenticabile</span></div></div>
+<div class="luogo-item"><span class="luogo-emoji">🏜️</span><div class="luogo-info"><strong>Sea of Sand (Segara Wedi)</strong><span>L'enorme distesa di sabbia vulcanica ai piedi del Bromo</span></div></div>
+<div class="luogo-item"><span class="luogo-emoji">🌿</span><div class="luogo-info"><strong>Savana Teletubbies Hill</strong><span>Le colline verdi ondulate che circondano il Bromo, foto mozzafiato</span></div></div>
+</div>
+</div>
+<div class="giorno-block">
+<div class="giorno-header"><div class="day-num">6</div><div class="day-date">Mercoledì 6 Agosto</div><div class="day-city">Banyuwangi</div></div>
+<div class="luoghi-list">
+<div class="luogo-item"><span class="luogo-emoji">🔵</span><div class="luogo-info"><strong>Kawah Ijen — Fuoco Blu</strong><span>Il fenomeno del fuoco blu elettrico, visibile solo di notte/alba. Trekking impegnativo</span></div></div>
+<div class="luogo-item"><span class="luogo-emoji">🦏</span><div class="luogo-info"><strong>Baluran National Park</strong><span>Detto "l'Africa di Java": savane, bufali e leopardi nel far east di Java</span></div></div>
+<div class="luogo-item"><span class="luogo-emoji">⛴️</span><div class="luogo-info"><strong>Traghetto per Bali</strong><span>Porto di Ketapang → Gilimanuk: 45 minuti di traghetto verso Bali</span></div></div>
 </div>
 </div>
 <div class="map-label">🗺️ Java — Yogyakarta, Bromo, Banyuwangi</div>
 <div class="map-wrap"><iframe src="https://maps.google.com/maps?q=Java,Indonesia&t=&z=7&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe></div>
 </div>
 <div id="sec-bali" class="section">
-<div class="sec-header">
-<div class="se">🌺</div>
-<h2>Bali</h2>
-<p class="sub">Riso, incenso e spiritualità — l'isola degli Dei</p>
-</div>
+<div class="sec-header"><div class="se">🌺</div><h2>Bali</h2><p class="sub">Riso, incenso e spiritualità — l'isola degli Dei</p></div>
 <div class="date-range">📅 7 Agosto → 11 Agosto 2026</div>
 <div class="stop-list">
-<div class="stop-item">
-<span class="si-emoji">🌿</span>
-<div class="si-info">
-<h3>Ubud</h3>
-<p>Cuore culturale di Bali. Terrazze di riso a Tegallalang, Monkey Forest, cerimonie induiste e spa da sogno.</p>
-<span class="hbadge">🏨 Ubad Retreat · 7–11 ago</span>
+<div class="stop-item"><span class="si-emoji">🌿</span><div class="si-info"><h3>Ubud</h3><p>Cuore culturale di Bali. Terrazze di riso a Tegallalang, Monkey Forest, cerimonie induiste e spa da sogno.</p><span class="hbadge">🏨 Ubad Retreat · 7–11 ago</span></div></div>
 </div>
+<div class="giorni-title">📅 Cosa fare giorno per giorno</div>
+<div class="giorno-block">
+<div class="giorno-header"><div class="day-num">7</div><div class="day-date">Giovedì 7 Agosto</div><div class="day-city">Ubud</div></div>
+<div class="luoghi-list">
+<div class="luogo-item"><span class="luogo-emoji">✈️</span><div class="luogo-info"><strong>Arrivo a Ubud da Bali</strong><span>Traghetto da Banyuwangi, poi trasferimento in auto verso Ubud (2h)</span></div></div>
+<div class="luogo-item"><span class="luogo-emoji">🚶</span><div class="luogo-info"><strong>Campuhan Ridge Walk</strong><span>Il trekking al tramonto tra le colline di Ubud — viste mozzafiato</span></div></div>
+<div class="luogo-item"><span class="luogo-emoji">🛒</span><div class="luogo-info"><strong>Ubud Art Market e Ubud Palace</strong><span>Mercato artigianale e palazzo reale nel cuore di Ubud</span></div></div>
+</div>
+</div>
+<div class="giorno-block">
+<div class="giorno-header"><div class="day-num">8</div><div class="day-date">Venerdì 8 Agosto</div><div class="day-city">Ubud</div></div>
+<div class="luoghi-list">
+<div class="luogo-item"><span class="luogo-emoji">🌾</span><div class="luogo-info"><strong>Tegallalang Rice Terraces</strong><span>Le terrazze di riso più fotografate di Bali, con swing sulla foresta</span></div></div>
+<div class="luogo-item"><span class="luogo-emoji">💧</span><div class="luogo-info"><strong>Tirta Empul</strong><span>Tempio sacro dell'acqua con piscine di purificazione — esperienza spirituale unica</span></div></div>
+<div class="luogo-item"><span class="luogo-emoji">🐘</span><div class="luogo-info"><strong>Goa Gajah (Elephant Cave)</strong><span>Tempio rupestre del XI secolo con fontane e grotte sacre</span></div></div>
+</div>
+</div>
+<div class="giorno-block">
+<div class="giorno-header"><div class="day-num">9</div><div class="day-date">Sabato 9 Agosto</div><div class="day-city">Ubud</div></div>
+<div class="luoghi-list">
+<div class="luogo-item"><span class="luogo-emoji">🐒</span><div class="luogo-info"><strong>Sacred Monkey Forest</strong><span>Foresta sacra con centinaia di scimmie e templi tra gli alberi</span></div></div>
+<div class="luogo-item"><span class="luogo-emoji">🏔️</span><div class="luogo-info"><strong>Pura Besakih</strong><span>La "madre di tutti i templi" balinesi, sul fianco del vulcano Agung</span></div></div>
+<div class="luogo-item"><span class="luogo-emoji">🌊</span><div class="luogo-info"><strong>Tanah Lot al tramonto</strong><span>Il tempio sull'oceano più famoso di Bali — tramonto imperdibile</span></div></div>
+</div>
+</div>
+<div class="giorno-block">
+<div class="giorno-header"><div class="day-num">10</div><div class="day-date">Domenica 10 Agosto</div><div class="day-city">Ubud</div></div>
+<div class="luoghi-list">
+<div class="luogo-item"><span class="luogo-emoji">🍳</span><div class="luogo-info"><strong>Balinese Cooking Class</strong><span>Impara a cucinare i piatti tradizionali balinesi — mercato + cucina</span></div></div>
+<div class="luogo-item"><span class="luogo-emoji">💆</span><div class="luogo-info"><strong>Spa Tradizionale Balinese</strong><span>Massaggio balinese completo — meritato riposo a metà viaggio</span></div></div>
+<div class="luogo-item"><span class="luogo-emoji">🔥</span><div class="luogo-info"><strong>Kecak Fire Dance al tramonto</strong><span>Lo spettacolo di danza del fuoco più scenografico di Bali, a Uluwatu</span></div></div>
 </div>
 </div>
 <div class="map-label">🗺️ Ubud, Bali</div>
 <div class="map-wrap"><iframe src="https://maps.google.com/maps?q=Ubud,Bali,Indonesia&t=&z=13&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe></div>
 </div>
 <div id="sec-gili" class="section">
-<div class="sec-header">
-<div class="se">🏝️</div>
-<h2>Gili Meno</h2>
-<p class="sub">Niente macchine, niente stress — solo mare turchese e amache</p>
-</div>
+<div class="sec-header"><div class="se">🏝️</div><h2>Gili Meno</h2><p class="sub">Niente macchine, niente stress — solo mare turchese e amache</p></div>
 <div class="date-range">📅 11 Agosto → 15 Agosto 2026</div>
 <div class="stop-list">
-<div class="stop-item">
-<span class="si-emoji">🐠</span>
-<div class="si-info">
-<h3>Gili Meno, Pamenang</h3>
-<p>La più tranquilla delle Gili Islands. Snorkeling con tartarughe, spiagge bianche, tramonti infiniti.</p>
-<span class="hbadge">🏨 Fantastic Cottages · 11–15 ago</span>
+<div class="stop-item"><span class="si-emoji">🐠</span><div class="si-info"><h3>Gili Meno, Pamenang</h3><p>La più tranquilla delle Gili Islands. Snorkeling con tartarughe, spiagge bianche, tramonti infiniti.</p><span class="hbadge">🏨 Fantastic Cottages · 11–15 ago</span></div></div>
 </div>
+<div class="giorni-title">📅 Cosa fare giorno per giorno</div>
+<div class="giorno-block">
+<div class="giorno-header"><div class="day-num">11</div><div class="day-date">Lunedì 11 Agosto</div><div class="day-city">Gili Meno</div></div>
+<div class="luoghi-list">
+<div class="luogo-item"><span class="luogo-emoji">🚤</span><div class="luogo-info"><strong>Arrivo in fast boat da Bali</strong><span>Traghetto veloce da Padang Bai (Bali) → Gili Meno, circa 1h30</span></div></div>
+<div class="luogo-item"><span class="luogo-emoji">🚶</span><div class="luogo-info"><strong>Giro dell'isola a piedi</strong><span>Tutta Gili Meno si percorre in 1 ora — spiagge diverse per ogni lato</span></div></div>
+<div class="luogo-item"><span class="luogo-emoji">🌅</span><div class="luogo-info"><strong>Tramonto sulla spiaggia ovest</strong><span>Il lato ovest offre i tramonti più spettacolari delle Gili</span></div></div>
+</div>
+</div>
+<div class="giorno-block">
+<div class="giorno-header"><div class="day-num">12</div><div class="day-date">Martedì 12 Agosto</div><div class="day-city">Gili Meno</div></div>
+<div class="luoghi-list">
+<div class="luogo-item"><span class="luogo-emoji">🐢</span><div class="luogo-info"><strong>Snorkeling con le tartarughe</strong><span>Le tartarughe marine sono facilissime da trovare nei reef vicino alla riva</span></div></div>
+<div class="luogo-item"><span class="luogo-emoji">🗿</span><div class="luogo-info"><strong>Bask Nest — Sculture Sottomarine</strong><span>Un museo subacqueo con statue di cemento ricoperte di coralli — unico al mondo</span></div></div>
+<div class="luogo-item"><span class="luogo-emoji">🦈</span><div class="luogo-info"><strong>Turtle Sanctuary</strong><span>Il santuario delle tartarughe di Gili Meno: si possono osservare i piccoli</span></div></div>
+</div>
+</div>
+<div class="giorno-block">
+<div class="giorno-header"><div class="day-num">13</div><div class="day-date">Mercoledì 13 Agosto</div><div class="day-city">Gili Meno + Trawangan</div></div>
+<div class="luoghi-list">
+<div class="luogo-item"><span class="luogo-emoji">🏝️</span><div class="luogo-info"><strong>Giro delle 3 Gili Islands</strong><span>Gita in barca per visitare Gili Trawangan e Gili Air nello stesso giorno</span></div></div>
+<div class="luogo-item"><span class="luogo-emoji">🍹</span><div class="luogo-info"><strong>Gili Trawangan — Beach Bar</strong><span>L'isola più vivace delle Gili, con bar sulla spiaggia e mercato notturno</span></div></div>
+<div class="luogo-item"><span class="luogo-emoji">🌊</span><div class="luogo-info"><strong>Gili Air — Snorkeling</strong><span>I reef di Gili Air sono tra i più colorati di tutta la zona</span></div></div>
+</div>
+</div>
+<div class="giorno-block">
+<div class="giorno-header"><div class="day-num">14</div><div class="day-date">Giovedì 14 Agosto</div><div class="day-city">Gili Meno</div></div>
+<div class="luoghi-list">
+<div class="luogo-item"><span class="luogo-emoji">🛶</span><div class="luogo-info"><strong>Kayak al tramonto</strong><span>Noleggio kayak e giro attorno all'isola con vista sul Rinjani</span></div></div>
+<div class="luogo-item"><span class="luogo-emoji">🌴</span><div class="luogo-info"><strong>Relax e beach hopping</strong><span>Giornata libera tra le diverse spiagge dell'isola</span></div></div>
+<div class="luogo-item"><span class="luogo-emoji">🍽️</span><div class="luogo-info"><strong>Cena di pesce fresco sul mare</strong><span>I ristoranti sulla spiaggia di Gili Meno servono il pesce del giorno</span></div></div>
 </div>
 </div>
 <div class="map-label">🗺️ Gili Meno, Lombok</div>
 <div class="map-wrap"><iframe src="https://maps.google.com/maps?q=Gili+Meno,Indonesia&t=&z=14&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe></div>
 </div>
 <div id="sec-komodo" class="section">
-<div class="sec-header">
-<div class="se">🦎</div>
-<h2>Komodo</h2>
-<p class="sub">Draghi, pink beach e oceano a perdita d'occhio</p>
-</div>
+<div class="sec-header"><div class="se">🦎</div><h2>Komodo</h2><p class="sub">Draghi, pink beach e oceano a perdita d'occhio</p></div>
 <div class="date-range">📅 15 Agosto → 19 Agosto 2026</div>
 <div class="stop-list">
-<div class="stop-item">
-<span class="si-emoji">🏙️</span>
-<div class="si-info">
-<h3>Labuan Bajo</h3>
-<p>Gateway del Parco Nazionale di Komodo. Tramonti sul porto, mercati di pesce, base per le isole.</p>
-<span class="hbadge">🏨 La Colina Komodo Hotel · 15–17 ago</span>
+<div class="stop-item"><span class="si-emoji">🏙️</span><div class="si-info"><h3>Labuan Bajo</h3><p>Gateway del Parco Nazionale di Komodo. Tramonti sul porto, mercati di pesce, base per le isole.</p><span class="hbadge">🏨 La Colina Komodo Hotel · 15–17 ago</span></div></div>
+<div class="stop-item"><span class="si-emoji">⛵</span><div class="si-info"><h3>Arcipelago Komodo — in barca</h3><p>Due giorni navigando tra le isole del parco. Draghi, Pink Beach, snorkeling nei reef più belli del mondo.</p><span class="hbadge">🛥️ Barca a bordo · 17–19 ago</span></div></div>
+</div>
+<div class="giorni-title">📅 Cosa fare giorno per giorno</div>
+<div class="giorno-block">
+<div class="giorno-header"><div class="day-num">15</div><div class="day-date">Sabato 15 Agosto</div><div class="day-city">Labuan Bajo</div></div>
+<div class="luoghi-list">
+<div class="luogo-item"><span class="luogo-emoji">✈️</span><div class="luogo-info"><strong>Volo per Labuan Bajo</strong><span>Da Lombok (LOP) → Labuan Bajo (LBJ), circa 1h di volo</span></div></div>
+<div class="luogo-item"><span class="luogo-emoji">🌇</span><div class="luogo-info"><strong>Porto di Labuan Bajo al tramonto</strong><span>Il porto con le barche tradizionali e il sole che affonda nell'oceano</span></div></div>
+<div class="luogo-item"><span class="luogo-emoji">🍽️</span><div class="luogo-info"><strong>Mercato del pesce e cena</strong><span>Pesce freschissimo al mercato locale — prezzi irrisori e qualità altissima</span></div></div>
 </div>
 </div>
-<div class="stop-item">
-<span class="si-emoji">⛵</span>
-<div class="si-info">
-<h3>Arcipelago Komodo — in barca</h3>
-<p>Due giorni navigando tra le isole del parco. Draghi di Komodo, Pink Beach, snorkeling nei reef più belli del mondo.</p>
-<span class="hbadge">🛥️ Barca a bordo · 17–19 ago</span>
+<div class="giorno-block">
+<div class="giorno-header"><div class="day-num">16</div><div class="day-date">Domenica 16 Agosto</div><div class="day-city">Labuan Bajo</div></div>
+<div class="luoghi-list">
+<div class="luogo-item"><span class="luogo-emoji">🏔️</span><div class="luogo-info"><strong>Padar Island — Viewpoint</strong><span>La vista più iconica dell'Indonesia: tre baie con spiagge di colori diversi</span></div></div>
+<div class="luogo-item"><span class="luogo-emoji">🌸</span><div class="luogo-info"><strong>Pink Beach</strong><span>Una delle poche spiagge rosa al mondo — il colore è dato dai coralli rossi</span></div></div>
+<div class="luogo-item"><span class="luogo-emoji">🐠</span><div class="luogo-info"><strong>Snorkeling a Kanawa Island</strong><span>Reef cristallini con pesci tropicali, razze mante e tartarughe</span></div></div>
 </div>
+</div>
+<div class="giorno-block">
+<div class="giorno-header"><div class="day-num">17</div><div class="day-date">Lunedì 17 Agosto</div><div class="day-city">Arcipelago Komodo</div></div>
+<div class="luoghi-list">
+<div class="luogo-item"><span class="luogo-emoji">⛵</span><div class="luogo-info"><strong>Imbarco sulla barca</strong><span>Si sale sulla barca tradizionale phinisi per 2 notti nell'arcipelago</span></div></div>
+<div class="luogo-item"><span class="luogo-emoji">🦎</span><div class="luogo-info"><strong>Komodo Island — I Draghi</strong><span>Trekking guidato sull'isola per osservare i draghi di Komodo allo stato brado</span></div></div>
+<div class="luogo-item"><span class="luogo-emoji">🦭</span><div class="luogo-info"><strong>Rinca Island</strong><span>Seconda isola con i draghi, meno turistica — avvistamento di cervi e bufali</span></div></div>
+<div class="luogo-item"><span class="luogo-emoji">🌊</span><div class="luogo-info"><strong>Snorkeling al tramonto</strong><span>Immersione nei reef coloratissimi, possibile avvistamento di razze mante</span></div></div>
+</div>
+</div>
+<div class="giorno-block">
+<div class="giorno-header"><div class="day-num">18</div><div class="day-date">Martedì 18 Agosto</div><div class="day-city">Arcipelago Komodo</div></div>
+<div class="luoghi-list">
+<div class="luogo-item"><span class="luogo-emoji">🌅</span><div class="luogo-info"><strong>Alba in barca sull'oceano</strong><span>Svegliarsi in mezzo all'arcipelago è un'esperienza unica nel suo genere</span></div></div>
+<div class="luogo-item"><span class="luogo-emoji">🐋</span><div class="luogo-info"><strong>Manta Point</strong><span>Il punto di avvistamento delle razze manta giganti — snorkeling indimenticabile</span></div></div>
+<div class="luogo-item"><span class="luogo-emoji">🏝️</span><div class="luogo-info"><strong>Padar Island al tramonto</strong><span>Trekking al viewpoint di Padar al tramonto — le foto più belle del viaggio</span></div></div>
+<div class="luogo-item"><span class="luogo-emoji">🍾</span><div class="luogo-info"><strong>Ultima cena sull'oceano</strong><span>Cena a bordo della barca con vista sulle stelle — fine del viaggio in bellezza</span></div></div>
 </div>
 </div>
 <div class="map-label">🗺️ Parco Nazionale di Komodo</div>
@@ -216,7 +296,7 @@ body{background:#111;color:#eee;font-family:'Segoe UI',Tahoma,sans-serif;padding
 </div>
 <div class="faq-item" onclick="toggleFaq(this)">
 <div class="faq-q"><span>🌡️ Che clima aspettarsi?</span><span class="faq-arrow">▼</span></div>
-<div class="faq-a">Agosto è stagione secca: caldo e soleggiato, 28–35°C. Alta umidità. A Bromo in altura le notti sono fredde: portare un pile.</div>
+<div class="faq-a">Agosto è stagione secca: caldo e soleggiato, 28–35°C. Alta umidità. A Bromo le notti sono fredde: portare un pile.</div>
 </div>
 <div class="faq-item" onclick="toggleFaq(this)">
 <div class="faq-q"><span>👒 Cosa mettere in valigia?</span><span class="faq-arrow">▼</span></div>
@@ -236,7 +316,6 @@ body{background:#111;color:#eee;font-family:'Segoe UI',Tahoma,sans-serif;padding
 <button class="nav-item" onclick="goTo('sec-info',5)"><span class="nav-emoji">❓</span>INFO</button>
 </nav>
 <script>
-var secs=['sec-home','sec-java','sec-bali','sec-gili','sec-komodo','sec-info'];
 function goTo(id,idx){
 document.querySelectorAll('.section').forEach(function(s){s.classList.remove('active')});
 document.getElementById(id).classList.add('active');
