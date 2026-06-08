@@ -36,6 +36,9 @@ body{background:#111;color:#eee;font-family:'Segoe UI',Tahoma,sans-serif;padding
 .si-info h3{font-size:1rem;font-weight:700;color:#fff}
 .si-info p{font-size:.85rem;color:#888;margin-top:3px;line-height:1.4}
 .si-info .hbadge{display:inline-block;margin-top:6px;background:#1e3a2f;color:#95d5b2;border-radius:20px;padding:3px 10px;font-size:.78rem;border:1px solid #2d6a4f}
+.map-wrap{margin:16px;border-radius:14px;overflow:hidden;border:1px solid #2d6a4f;height:230px}
+.map-wrap iframe{width:100%;height:100%;border:none;display:block}
+.map-label{margin:16px 16px 6px;font-size:.78rem;color:#2d6a4f;text-transform:uppercase;letter-spacing:1px;font-weight:700}
 .faq-title{padding:28px 20px 8px;font-size:1.6rem;font-weight:800}
 .faq-sub{padding:0 20px 18px;font-size:.9rem;color:#888;font-style:italic}
 .faq-item{background:#1e1e1e;border-radius:12px;margin:0 16px 10px;overflow:hidden;border:1px solid #2a2a2a}
@@ -43,7 +46,7 @@ body{background:#111;color:#eee;font-family:'Segoe UI',Tahoma,sans-serif;padding
 .faq-q:hover{background:#252525}
 .faq-arrow{color:#2d6a4f;font-size:.75rem;transition:transform .3s}
 .faq-item.open .faq-arrow{transform:rotate(180deg);color:#95d5b2}
-.faq-a{display:none;padding:0 15px 15px;font-size:.85rem;color:#aaa;line-height:1.6;border-top:1px solid #2a2a2a;padding-top:12px}
+.faq-a{display:none;padding:12px 15px 15px;font-size:.85rem;color:#aaa;line-height:1.6;border-top:1px solid #2a2a2a}
 .faq-item.open .faq-a{display:block}
 .bottom-nav{position:fixed;bottom:0;left:0;right:0;background:#1a1a1a;border-top:1px solid #333;display:flex;justify-content:space-around;align-items:stretch;height:66px;z-index:999}
 .nav-item{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;padding:6px 2px;border:none;background:transparent;color:#666;font-size:.6rem;font-weight:600;text-transform:uppercase;letter-spacing:.5px;gap:2px;transition:background .2s}
@@ -64,27 +67,29 @@ body{background:#111;color:#eee;font-family:'Segoe UI',Tahoma,sans-serif;padding
 <p class="home-intro">Tra vulcani e risaie, templi e reef di corallo.<br>19 giorni che non dimenticheremo mai.</p>
 <div class="pill">🗺️ Le Tappe</div>
 <div class="tappe-grid">
-<div class="tappa-card" onclick="goTo('sec-java',0)">
+<div class="tappa-card" onclick="goTo('sec-java',1)">
 <span class="tc-emoji">🏛️</span>
 <div class="tc-info"><h3>Java</h3><div class="sub">Yogyakarta · Bromo · Banyuwangi</div></div>
 <span class="tc-badge">1–7 ago</span>
 </div>
-<div class="tappa-card" onclick="goTo('sec-bali',1)">
+<div class="tappa-card" onclick="goTo('sec-bali',2)">
 <span class="tc-emoji">🌺</span>
 <div class="tc-info"><h3>Bali — Ubud</h3><div class="sub">Ubad Retreat</div></div>
 <span class="tc-badge">7–11 ago</span>
 </div>
-<div class="tappa-card" onclick="goTo('sec-gili',2)">
+<div class="tappa-card" onclick="goTo('sec-gili',3)">
 <span class="tc-emoji">🏝️</span>
 <div class="tc-info"><h3>Gili Meno</h3><div class="sub">Fantastic Cottages</div></div>
 <span class="tc-badge">11–15 ago</span>
 </div>
-<div class="tappa-card" onclick="goTo('sec-komodo',3)">
+<div class="tappa-card" onclick="goTo('sec-komodo',4)">
 <span class="tc-emoji">🦎</span>
 <div class="tc-info"><h3>Komodo</h3><div class="sub">Labuan Bajo · Arcipelago</div></div>
 <span class="tc-badge">15–19 ago</span>
 </div>
 </div>
+<div class="map-label">🗺️ Dove siamo nel mondo</div>
+<div class="map-wrap"><iframe src="https://maps.google.com/maps?q=Indonesia&t=&z=5&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe></div>
 </div>
 <div id="sec-java" class="section">
 <div class="sec-header">
@@ -119,6 +124,8 @@ body{background:#111;color:#eee;font-family:'Segoe UI',Tahoma,sans-serif;padding
 </div>
 </div>
 </div>
+<div class="map-label">🗺️ Java — Yogyakarta, Bromo, Banyuwangi</div>
+<div class="map-wrap"><iframe src="https://maps.google.com/maps?q=Java,Indonesia&t=&z=7&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe></div>
 </div>
 <div id="sec-bali" class="section">
 <div class="sec-header">
@@ -137,6 +144,8 @@ body{background:#111;color:#eee;font-family:'Segoe UI',Tahoma,sans-serif;padding
 </div>
 </div>
 </div>
+<div class="map-label">🗺️ Ubud, Bali</div>
+<div class="map-wrap"><iframe src="https://maps.google.com/maps?q=Ubud,Bali,Indonesia&t=&z=13&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe></div>
 </div>
 <div id="sec-gili" class="section">
 <div class="sec-header">
@@ -155,6 +164,8 @@ body{background:#111;color:#eee;font-family:'Segoe UI',Tahoma,sans-serif;padding
 </div>
 </div>
 </div>
+<div class="map-label">🗺️ Gili Meno, Lombok</div>
+<div class="map-wrap"><iframe src="https://maps.google.com/maps?q=Gili+Meno,Indonesia&t=&z=14&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe></div>
 </div>
 <div id="sec-komodo" class="section">
 <div class="sec-header">
@@ -181,6 +192,8 @@ body{background:#111;color:#eee;font-family:'Segoe UI',Tahoma,sans-serif;padding
 </div>
 </div>
 </div>
+<div class="map-label">🗺️ Parco Nazionale di Komodo</div>
+<div class="map-wrap"><iframe src="https://maps.google.com/maps?q=Komodo+National+Park,Indonesia&t=&z=10&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe></div>
 </div>
 <div id="sec-info" class="section">
 <div class="faq-title">❓ Info di Sopravvivenza</div>
@@ -191,7 +204,7 @@ body{background:#111;color:#eee;font-family:'Segoe UI',Tahoma,sans-serif;padding
 </div>
 <div class="faq-item" onclick="toggleFaq(this)">
 <div class="faq-q"><span>💉 Serve il visto?</span><span class="faq-arrow">▼</span></div>
-<div class="faq-a">Gli italiani possono entrare senza visto fino a 30 giorni (Visa on Arrival gratuita o e-Visa). Portare il passaporto valido almeno 6 mesi oltre la data di rientro.</div>
+<div class="faq-a">Gli italiani possono entrare senza visto fino a 30 giorni (Visa on Arrival gratuita o e-Visa). Passaporto valido almeno 6 mesi oltre la data di rientro.</div>
 </div>
 <div class="faq-item" onclick="toggleFaq(this)">
 <div class="faq-q"><span>💰 Qual è la valuta?</span><span class="faq-arrow">▼</span></div>
@@ -199,11 +212,11 @@ body{background:#111;color:#eee;font-family:'Segoe UI',Tahoma,sans-serif;padding
 </div>
 <div class="faq-item" onclick="toggleFaq(this)">
 <div class="faq-q"><span>📱 C'è connessione internet?</span><span class="faq-arrow">▼</span></div>
-<div class="faq-a">WiFi negli hotel ovunque. Consigliato acquistare una SIM locale (Telkomsel o XL Axiata) — costa pochissimo. A Gili Meno il segnale è più debole.</div>
+<div class="faq-a">WiFi negli hotel ovunque. Consigliato acquistare una SIM locale (Telkomsel o XL Axiata). A Gili Meno il segnale è più debole.</div>
 </div>
 <div class="faq-item" onclick="toggleFaq(this)">
 <div class="faq-q"><span>🌡️ Che clima aspettarsi?</span><span class="faq-arrow">▼</span></div>
-<div class="faq-a">Agosto è stagione secca: caldo e soleggiato, 28–35°C. Alta umidità. Portare protezione solare, repellente per insetti. In altura a Bromo le notti sono fredde: portare un pile.</div>
+<div class="faq-a">Agosto è stagione secca: caldo e soleggiato, 28–35°C. Alta umidità. A Bromo in altura le notti sono fredde: portare un pile.</div>
 </div>
 <div class="faq-item" onclick="toggleFaq(this)">
 <div class="faq-q"><span>👒 Cosa mettere in valigia?</span><span class="faq-arrow">▼</span></div>
@@ -211,7 +224,7 @@ body{background:#111;color:#eee;font-family:'Segoe UI',Tahoma,sans-serif;padding
 </div>
 <div class="faq-item" onclick="toggleFaq(this)">
 <div class="faq-q"><span>🍜 Cosa si mangia?</span><span class="faq-arrow">▼</span></div>
-<div class="faq-a">Nasi goreng, mie goreng, satay, gado-gado, rendang, tempeh... Cucina deliziosa a prezzi bassissimi. Attenzione al piccante! Bere solo acqua in bottiglia sigillata.</div>
+<div class="faq-a">Nasi goreng, mie goreng, satay, gado-gado, rendang, tempeh... Cucina deliziosa a prezzi bassissimi. Bere solo acqua in bottiglia sigillata.</div>
 </div>
 </div>
 <nav class="bottom-nav">
@@ -223,7 +236,7 @@ body{background:#111;color:#eee;font-family:'Segoe UI',Tahoma,sans-serif;padding
 <button class="nav-item" onclick="goTo('sec-info',5)"><span class="nav-emoji">❓</span>INFO</button>
 </nav>
 <script>
-var sections=['sec-home','sec-java','sec-bali','sec-gili','sec-komodo','sec-info'];
+var secs=['sec-home','sec-java','sec-bali','sec-gili','sec-komodo','sec-info'];
 function goTo(id,idx){
 document.querySelectorAll('.section').forEach(function(s){s.classList.remove('active')});
 document.getElementById(id).classList.add('active');
