@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Indonesia Express</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#111;color:#eee;font-family:'Segoe UI',Tahoma,sans-serif;padding-bottom:75px;min-height:100vh}
+.section{display:none}
+.section.active{display:block}
+.hero{background:linear-gradient(135deg,#1a472a 0%,#2d6a4f 40%,#1b4332 70%,#081c15 100%);min-height:60vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 20px}
+.hero-emojis{font-size:2.2rem;margin-bottom:18px;letter-spacing:8px}
+.hero h1{font-size:2.8rem;font-weight:900;text-transform:uppercase;letter-spacing:3px;color:#fff;line-height:1.2}
+.hero h2{font-size:1rem;font-weight:300;color:#a8d8b9;margin-top:10px;letter-spacing:2px}
+.hero .dates{margin-top:18px;background:rgba(0,0,0,0.4);border:1px solid #2d6a4f;border-radius:30px;padding:7px 22px;font-size:.9rem;color:#95d5b2;letter-spacing:1px}
+.home-intro{padding:18px 16px 0;font-size:.95rem;color:#aaa;line-height:1.6;text-align:center;font-style:italic}
+.pill{display:inline-block;background:#1e3a2f;color:#95d5b2;border-radius:20px;padding:4px 14px;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin:18px 16px 10px;border:1px solid #2d6a4f}
+.tappe-grid{display:grid;grid-template-columns:1fr;gap:12px;padding:4px 16px 20px}
+.tappa-card{background:#1e1e1e;border-radius:14px;padding:16px;display:flex;align-items:center;gap:14px;border-left:4px solid #2d6a4f;cursor:pointer;transition:background .2s}
+.tappa-card:hover{background:#282828}
+.tc-emoji{font-size:2rem}
+.tc-info{flex:1}
+.tc-info h3{font-size:1rem;font-weight:700;color:#fff}
+.tc-info .sub{font-size:.82rem;color:#888;margin-top:2px}
+.tc-badge{background:#111;border:1px solid #333;border-radius:20px;padding:4px 10px;font-size:.75rem;color:#95d5b2;white-space:nowrap}
+.sec-header{background:linear-gradient(135deg,#1a1a1a,#222);padding:30px 20px 20px;border-bottom:1px solid #333}
+.sec-header .se{font-size:2.5rem;margin-bottom:8px}
+.sec-header h2{font-size:1.8rem;font-weight:800;text-transform:uppercase;letter-spacing:2px}
+.sec-header .sub{font-size:.9rem;color:#888;margin-top:4px}
+.date-range{background:#1e1e1e;border-radius:10px;padding:12px 16px;margin:16px;display:flex;align-items:center;gap:10px;border:1px solid #333;font-size:.9rem;color:#95d5b2}
+.stop-list{padding:0 16px}
+.stop-item{padding:16px 0;border-bottom:1px solid #222;display:flex;gap:14px;align-items:flex-start}
+.stop-item:last-child{border-bottom:none}
+.si-emoji{font-size:1.5rem;margin-top:2px}
+.si-info h3{font-size:1rem;font-weight:700;color:#fff}
+.si-info p{font-size:.85rem;color:#888;margin-top:3px;line-height:1.4}
+.si-info .hbadge{display:inline-block;margin-top:6px;background:#1e3a2f;color:#95d5b2;border-radius:20px;padding:3px 10px;font-size:.78rem;border:1px solid #2d6a4f}
+.faq-title{padding:28px 20px 8px;font-size:1.6rem;font-weight:800}
+.faq-sub{padding:0 20px 18px;font-size:.9rem;color:#888;font-style:italic}
+.faq-item{background:#1e1e1e;border-radius:12px;margin:0 16px 10px;overflow:hidden;border:1px solid #2a2a2a}
+.faq-q{padding:15px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;font-weight:600;font-size:.9rem;gap:10px}
+.faq-q:hover{background:#252525}
+.faq-arrow{color:#2d6a4f;font-size:.75rem;transition:transform .3s}
+.faq-item.open .faq-arrow{transform:rotate(180deg);color:#95d5b2}
+.faq-a{display:none;padding:0 15px 15px;font-size:.85rem;color:#aaa;line-height:1.6;border-top:1px solid #2a2a2a;padding-top:12px}
+.faq-item.open .faq-a{display:block}
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;background:#1a1a1a;border-top:1px solid #333;display:flex;justify-content:space-around;align-items:stretch;height:66px;z-index:999}
+.nav-item{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;padding:6px 2px;border:none;background:transparent;color:#666;font-size:.6rem;font-weight:600;text-transform:uppercase;letter-spacing:.5px;gap:2px;transition:background .2s}
+.nav-item:hover{background:#222}
+.nav-item.active{color:#95d5b2}
+.nav-emoji{font-size:1.35rem}
+@media(min-width:600px){.hero h1{font-size:3.5rem}.tappe-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div id="sec-home" class="section active">
+<div class="hero">
+<div class="hero-emojis">🌴 🏝️ 🦎 🌋 🐠</div>
+<h1>Indonesia<br>Express</h1>
+<h2>Agosto 2026 · Paolo e compagni 🌴</h2>
+<div class="dates">📅 1 Agosto → 19 Agosto 2026</div>
+</div>
+<p class="home-intro">Tra vulcani e risaie, templi e reef di corallo.<br>19 giorni che non dimenticheremo mai.</p>
+<div class="pill">🗺️ Le Tappe</div>
+<div class="tappe-grid">
+<div class="tappa-card" onclick="goTo('sec-java',0)">
+<span class="tc-emoji">🏛️</span>
+<div class="tc-info"><h3>Java</h3><div class="sub">Yogyakarta · Bromo · Banyuwangi</div></div>
+<span class="tc-badge">1–7 ago</span>
+</div>
+<div class="tappa-card" onclick="goTo('sec-bali',1)">
+<span class="tc-emoji">🌺</span>
+<div class="tc-info"><h3>Bali — Ubud</h3><div class="sub">Ubad Retreat</div></div>
+<span class="tc-badge">7–11 ago</span>
+</div>
+<div class="tappa-card" onclick="goTo('sec-gili',2)">
+<span class="tc-emoji">🏝️</span>
+<div class="tc-info"><h3>Gili Meno</h3><div class="sub">Fantastic Cottages</div></div>
+<span class="tc-badge">11–15 ago</span>
+</div>
+<div class="tappa-card" onclick="goTo('sec-komodo',3)">
+<span class="tc-emoji">🦎</span>
+<div class="tc-info"><h3>Komodo</h3><div class="sub">Labuan Bajo · Arcipelago</div></div>
+<span class="tc-badge">15–19 ago</span>
+</div>
+</div>
+</div>
+<div id="sec-java" class="section">
+<div class="sec-header">
+<div class="se">🏛️</div>
+<h2>Java</h2>
+<p class="sub">Templi, vulcani e foreste — il cuore pulsante dell'Indonesia</p>
+</div>
+<div class="date-range">📅 1 Agosto → 7 Agosto 2026</div>
+<div class="stop-list">
+<div class="stop-item">
+<span class="si-emoji">🕌</span>
+<div class="si-info">
+<h3>Yogyakarta</h3>
+<p>La capitale culturale di Java. Borobudur, Prambanan, Keraton — la città che non finisce mai di stupire.</p>
+<span class="hbadge">🏨 Jambuluwuk Malioboro · 1–5 ago</span>
+</div>
+</div>
+<div class="stop-item">
+<span class="si-emoji">🌋</span>
+<div class="si-info">
+<h3>Bromo</h3>
+<p>L'alba sul vulcano più spettacolare d'Indonesia. Mare di sabbia, fumo e silenzio assoluto.</p>
+<span class="hbadge">🏨 Gubuk Ndeso Bromo · 5–6 ago</span>
+</div>
+</div>
+<div class="stop-item">
+<span class="si-emoji">🚢</span>
+<div class="si-info">
+<h3>Banyuwangi</h3>
+<p>Porta d'ingresso a Bali. Ijen con il fuoco blu, e il traghetto verso la prossima avventura.</p>
+<span class="hbadge">🏨 Ketapang Indah Hotel · 6–7 ago</span>
+</div>
+</div>
+</div>
+</div>
+<div id="sec-bali" class="section">
+<div class="sec-header">
+<div class="se">🌺</div>
+<h2>Bali</h2>
+<p class="sub">Riso, incenso e spiritualità — l'isola degli Dei</p>
+</div>
+<div class="date-range">📅 7 Agosto → 11 Agosto 2026</div>
+<div class="stop-list">
+<div class="stop-item">
+<span class="si-emoji">🌿</span>
+<div class="si-info">
+<h3>Ubud</h3>
+<p>Cuore culturale di Bali. Terrazze di riso a Tegallalang, Monkey Forest, cerimonie induiste e spa da sogno.</p>
+<span class="hbadge">🏨 Ubad Retreat · 7–11 ago</span>
+</div>
+</div>
+</div>
+</div>
+<div id="sec-gili" class="section">
+<div class="sec-header">
+<div class="se">🏝️</div>
+<h2>Gili Meno</h2>
+<p class="sub">Niente macchine, niente stress — solo mare turchese e amache</p>
+</div>
+<div class="date-range">📅 11 Agosto → 15 Agosto 2026</div>
+<div class="stop-list">
+<div class="stop-item">
+<span class="si-emoji">🐠</span>
+<div class="si-info">
+<h3>Gili Meno, Pamenang</h3>
+<p>La più tranquilla delle Gili Islands. Snorkeling con tartarughe, spiagge bianche, tramonti infiniti.</p>
+<span class="hbadge">🏨 Fantastic Cottages · 11–15 ago</span>
+</div>
+</div>
+</div>
+</div>
+<div id="sec-komodo" class="section">
+<div class="sec-header">
+<div class="se">🦎</div>
+<h2>Komodo</h2>
+<p class="sub">Draghi, pink beach e oceano a perdita d'occhio</p>
+</div>
+<div class="date-range">📅 15 Agosto → 19 Agosto 2026</div>
+<div class="stop-list">
+<div class="stop-item">
+<span class="si-emoji">🏙️</span>
+<div class="si-info">
+<h3>Labuan Bajo</h3>
+<p>Gateway del Parco Nazionale di Komodo. Tramonti sul porto, mercati di pesce, base per le isole.</p>
+<span class="hbadge">🏨 La Colina Komodo Hotel · 15–17 ago</span>
+</div>
+</div>
+<div class="stop-item">
+<span class="si-emoji">⛵</span>
+<div class="si-info">
+<h3>Arcipelago Komodo — in barca</h3>
+<p>Due giorni navigando tra le isole del parco. Draghi di Komodo, Pink Beach, snorkeling nei reef più belli del mondo.</p>
+<span class="hbadge">🛥️ Barca a bordo · 17–19 ago</span>
+</div>
+</div>
+</div>
+</div>
+<div id="sec-info" class="section">
+<div class="faq-title">❓ Info di Sopravvivenza</div>
+<div class="faq-sub">Le risposte alle domande che tutti pensano ma nessuno vuole fare.</div>
+<div class="faq-item" onclick="toggleFaq(this)">
+<div class="faq-q"><span>✈️ Come ci si sposta tra le tappe?</span><span class="faq-arrow">▼</span></div>
+<div class="faq-a">Voli interni tra le isole (Yogya→Bali, Bali→Lombok, Lombok→Labuan Bajo). A Java in minivan o bus. A Gili con fast boat. Nell'arcipelago Komodo con barca noleggiata.</div>
+</div>
+<div class="faq-item" onclick="toggleFaq(this)">
+<div class="faq-q"><span>💉 Serve il visto?</span><span class="faq-arrow">▼</span></div>
+<div class="faq-a">Gli italiani possono entrare senza visto fino a 30 giorni (Visa on Arrival gratuita o e-Visa). Portare il passaporto valido almeno 6 mesi oltre la data di rientro.</div>
+</div>
+<div class="faq-item" onclick="toggleFaq(this)">
+<div class="faq-q"><span>💰 Qual è la valuta?</span><span class="faq-arrow">▼</span></div>
+<div class="faq-a">La Rupia Indonesiana (IDR). 1€ ≈ 17.000 IDR. Conviene prelevare agli ATM locali o cambiare in agenzia. Evitare i cambi in aeroporto.</div>
+</div>
+<div class="faq-item" onclick="toggleFaq(this)">
+<div class="faq-q"><span>📱 C'è connessione internet?</span><span class="faq-arrow">▼</span></div>
+<div class="faq-a">WiFi negli hotel ovunque. Consigliato acquistare una SIM locale (Telkomsel o XL Axiata) — costa pochissimo. A Gili Meno il segnale è più debole.</div>
+</div>
+<div class="faq-item" onclick="toggleFaq(this)">
+<div class="faq-q"><span>🌡️ Che clima aspettarsi?</span><span class="faq-arrow">▼</span></div>
+<div class="faq-a">Agosto è stagione secca: caldo e soleggiato, 28–35°C. Alta umidità. Portare protezione solare, repellente per insetti. In altura a Bromo le notti sono fredde: portare un pile.</div>
+</div>
+<div class="faq-item" onclick="toggleFaq(this)">
+<div class="faq-q"><span>👒 Cosa mettere in valigia?</span><span class="faq-arrow">▼</span></div>
+<div class="faq-a">Abbigliamento leggero, costume, sarong (obbligatorio nei templi), sandali, scarpe da trekking per Bromo, crema solare, repellente, medicinali base.</div>
+</div>
+<div class="faq-item" onclick="toggleFaq(this)">
+<div class="faq-q"><span>🍜 Cosa si mangia?</span><span class="faq-arrow">▼</span></div>
+<div class="faq-a">Nasi goreng, mie goreng, satay, gado-gado, rendang, tempeh... Cucina deliziosa a prezzi bassissimi. Attenzione al piccante! Bere solo acqua in bottiglia sigillata.</div>
+</div>
+</div>
+<nav class="bottom-nav">
+<button class="nav-item active" onclick="goTo('sec-home',0)"><span class="nav-emoji">🏠</span>HOME</button>
+<button class="nav-item" onclick="goTo('sec-java',1)"><span class="nav-emoji">🏛️</span>JAVA</button>
+<button class="nav-item" onclick="goTo('sec-bali',2)"><span class="nav-emoji">🌺</span>BALI</button>
+<button class="nav-item" onclick="goTo('sec-gili',3)"><span class="nav-emoji">🏝️</span>GILI</button>
+<button class="nav-item" onclick="goTo('sec-komodo',4)"><span class="nav-emoji">🦎</span>KOMODO</button>
+<button class="nav-item" onclick="goTo('sec-info',5)"><span class="nav-emoji">❓</span>INFO</button>
+</nav>
+<script>
+var sections=['sec-home','sec-java','sec-bali','sec-gili','sec-komodo','sec-info'];
+function goTo(id,idx){
+document.querySelectorAll('.section').forEach(function(s){s.classList.remove('active')});
+document.getElementById(id).classList.add('active');
+document.querySelectorAll('.nav-item').forEach(function(n){n.classList.remove('active')});
+document.querySelectorAll('.nav-item')[idx].classList.add('active');
+window.scrollTo(0,0);
+}
+function toggleFaq(item){item.classList.toggle('open')}
+</script>
+</body>
+</html>
